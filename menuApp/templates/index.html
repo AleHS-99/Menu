@@ -1,62 +1,66 @@
 {% extends 'base.html' %}
 {% load static  %}
 {% load widget_tweaks %}
-{% block body %}
-<div class="content" >
-<div class="container">
-<div class="row">
-          <div class="col-12" style="margin-top: 1%">
-            <div class="card">
-              <div class="card-header" >
-                  <div class="media">
-                   <img src="{% static 'img/logo.jpg' %}" class="img-circle float-left img-lg">
-                      <div class="media-body p-3">
-                      <h1 >Menú</h1>
-                      </div>
-                  </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-              {% for m in modal %}
-                <button data-toggle="collapse" class="btn-primary form-control" style="margin-bottom: 1%" data-target="#{{ m.2 }}">{{ m.1 }} <i class="fa fa-arrow-alt-circle-down float-right"></i></button>
+{% block content %}
+<style>
+    #menu{
+        background-image: url({% static 'img/shape-5.png' %});
+    }
+</style>
+      <section class="section menu" aria-label="menu-label" id="menu">
+        <div class="container">
+            <br><br>
+          <p class="section-subtitle text-center label-2"></p>
 
-                <div id="{{ m.2 }}" class="collapse show">
-                    {% for c in object_list %}
+          <h2 class="headline-1 section-title text-center">Nuestro Men&uacute;</h2>
+
+
+               {% for m in modal %}
+                   <p class="section-subtitle text-center label-2">{{ m.1 }}</p>
+                   <ul class="grid-list">
+                   {% for c in object_list %}
                         {% if c.moda.codigo == m.0 %}
-                        <div class="media border p-2" style="margin-bottom: 1%">
-                        {% if c.foto %}
-                          <img src="{{ c.foto.url }}" alt="{{ c.nombre }}" class="img-lg img-circle">
-                            {% else %}
-                            <img src="{% static 'img/logo.jpg' %}" alt="{{ c.nombre }}" class="img-lg img-circle">
-                            {% endif %}
-                          <div class="media-body p-1">
-                              <h4>{{ c.nombre }}</h4>
-                              <h5><small class="precio"><i><strong>Precio:</strong> {{ c.precio}} CUP</i></small></h5>
-                              <p>{% if c.ingredientes %}{{ c.ingredientes }}{% endif %}</p>
-                          </div>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+                            <li>
+                            <div class="menu-card hover:card">
+                       {% if c.foto %}
+                           <figure class="card-banner img-holder" style="width: 100px">
+                              <img src="{{ c.foto.url }}"  loading="lazy" alt="Greek Salad"
+                                class="img-cover">
+                            </figure>
+                       {% else %}
+                           <figure class="card-banner img-holder" style="width: 100px">
+                              <img src="{% static 'img/logo.jpg' %}"  loading="lazy" alt="Greek Salad"
+                                class="img-cover">
+                            </figure>
+                       {% endif %}
+                            <div>
+
+                                  <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                      <a href="#" class="card-title">{{ c.nombre }}</a>
+                                    </h3>
+
+                                    <span class="badge label-1">Seasonal</span>
+
+                                    <span class="span title-2">$25.50</span>
+                                  </div>
+
+                                  <p class="card-text label-1">
+                                    Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.
+                                  </p>
+
+                                </div>
+
+                              </div>
+                            </li>
+                       {% endif %}
+                   {% endfor %}
+                </ul>
               {% endfor %}
 
-              </div>
-              <div class="card-footer">
 
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
         </div>
-</div>
-</div>
-    <script type="application/javascript">
-    $(function () {
-        if (screen.width >580){
-            var elemento = document.getElementsByClassName("precio");
-            for(var i = 0; i < elemento.length; i++)
-                elemento[i].className += " float-right";
-        };
-    });
-    </script>
+      </section>
+
+
 {% endblock %}

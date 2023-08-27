@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% load widget_tweaks %}
+{% block body %}
+<div class="content" >
+<div class="container">
+<div class="row">
+          <div class="col-12" style="margin-top: 1%">
+            <div class="card">
+              <div class="card-header" >
+                  <div class="media">
+                   <img src="{% static 'img/logo.jpg' %}" class="img-circle float-left img-lg">
+                      <div class="media-body p-3">
+                      <h1 >Menú</h1>
+                      </div>
+                  </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+              {% for m in modal %}
+                <button data-toggle="collapse" class="btn-primary form-control" style="margin-bottom: 1%" data-target="#{{ m.2 }}">{{ m.1 }} <i class="fa fa-arrow-alt-circle-down float-right"></i></button>
+
+                <div id="{{ m.2 }}" class="collapse show">
+                    {% for c in object_list %}
+                        {% if c.moda.codigo == m.0 %}
+                        <div class="media border p-2" style="margin-bottom: 1%">
+                        {% if c.foto %}
+                          <img src="{{ c.foto.url }}" alt="{{ c.nombre }}" class="img-lg img-circle">
+                            {% else %}
+                            <img src="{% static 'img/logo.jpg' %}" alt="{{ c.nombre }}" class="img-lg img-circle">
+                            {% endif %}
+                          <div class="media-body p-1">
+                              <h4>{{ c.nombre }}</h4>
+                              <h5><small class="precio"><i><strong>Precio:</strong> {{ c.precio}} CUP</i></small></h5>
+                              <p>{% if c.ingredientes %}{{ c.ingredientes }}{% endif %}</p>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+              {% endfor %}
+
+              </div>
+              <div class="card-footer">
+
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+</div>
+</div>
+    <script type="application/javascript">
+    $(function () {
+        if (screen.width >580){
+            var elemento = document.getElementsByClassName("precio");
+            for(var i = 0; i < elemento.length; i++)
+                elemento[i].className += " float-right";
+        };
+    });
+    </script>
+{% endblock %}

@@ -1,129 +1,243 @@
 {% extends 'base.html' %}
 {% load static  %}
-{% block body %}
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="zmOPt2aN"></script>
-<div class="content-wrapper" style="margin-top: 1%">
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Main content -->
-            <div class="invoice p-3 mb-3">
+{% block content %}
+  <main>
+    <article>
 
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <h3 class="d-inline-block d-sm-none">Bar&Tapas el Guayabero</h3>
-              <div class="col-12">
-                <img src="{% static 'img/collage.jpg' %}" class="product-image" alt="Product Image">
-              </div>
-              <div class="col-12 product-image-thumbs">
-                <div class="product-image-thumb active"><img src="{% static 'img/collage.jpg' %}" alt="Product Image"></div>
-                <div class="product-image-thumb" ><img src="{% static 'img/prueba2.jpg' %}" alt="Product Image"></div>
-                <div class="product-image-thumb" ><img src="{% static 'img/coctail.jpg' %}" alt="Product Image"></div>
-                <div class="product-image-thumb" ><img src="{% static 'img/background.jpg' %}" alt="Product Image"></div>
-              </div>
+      <!--
+        - #HERO
+      -->
+
+      <section class="hero text-center" aria-label="home" id="home">
+
+        <ul class="hero-slider" data-hero-slider>
+
+          <li class="slider-item active" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="{% static 'img/hero-slider-1.jpg' %}" width="1880" height="950" alt="" class="img-cover">
             </div>
-              <div class="col-12 col-sm-6 justify-content-center">
-              <h3 class="my-3">Bar&Tapas el Guayabero</h3>
-              <p>
-                Nos complace presentarles nuestro proyecto familiar Bar y Tapas ( El Guayabero ).<br>
-                  Les invitamos a descubrir las tradiciones cubanas desde nuestro local y hacer de
-                  su estancia un momento feliz junto a nosotros, degustando de nuestras tapas y disfruntando
-                  de nuestra coctelería nacional e internacional.<br>
-                  Trabajaremos con el placer de satisfacer sus necesidades.<br>
-                  Nuestro equipo les está esperando.
-              </p><hr>
-                  <p>
-                We are pleased to present our family project Restaurant and Bar ( El Guayabero ).<br>
-                We invite you to discover Cuban traditions from our premises and make your stay a
-                happy moment with us, tasting our tapas and enjoying our national and international cocktails.<br>
-                We will work with pleasure to satisfy your needs.<br>
-                Our team is waiting for you.
-              </p><hr>
-                  <p>Puedes visitarnos a trav&eacute;s de nuestras redes sociales   | You can visit us through our social networks:<br>
-                      <br>
-                  </p>
-                  <div class="text-center">
-                      <a href="https://www.facebook.com/elguayaberobar"><img src="{% static 'img/facebook_logo_48px.png' %}" ></a>
-                      &nbsp;
-                      <a href="https://api.whatsapp.com/send?phone=5352743295"><img src="{% static 'img/whatsapp_48px.png' %}" ></a>
-                      &nbsp;
-                      <a href="https://www.tripadvisor.es/Restaurant_Review-g910817-d24124059-Reviews-Restaurant_Bar_Y_Tapas_El_Guayabero-Rafael_Freyre_Holguin_Province_Cuba.html"><img src="{% static 'img/tripadvisor_48px.png' %}" ></a>
-                      &nbsp;
-                      <a href="mailto:elguayaberobar@gmail.com"><img src="{% static 'img/mail_48px.png' %}" ></a>
-                  </div>
-              </div>
-              <!-- /.row -->
-        <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Contacto</a>
-                <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comentarios</a>
-                <a class="nav-item nav-link" id="product-rating-tab" data-toggle="tab" href="#product-rating" role="tab" aria-controls="product-rating" aria-selected="false">Ubicaci&oacute;n</a>
-              </div>
-            </nav>
-            <div class="tab-content p-3" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">
-                  <div class="container-fluid">
-                      <div class="row">
-                          <div class="col-md-auto">
-                              Estamos ubicados a tan solo 300 metros del poblado Melilla. <a href="https://goo.gl/maps/H7j3oF4pYg38ByTb8" target="_blank"><i class="fa fa-map-marked"></i></a>
-                              <address>
-                                Contacta con nosotros directamente desde nuestra p&aacute;gina de <a href="https://www.facebook.com/elguayaberobar">Faceboock</a><br>
-                                O a trav&eacute;s de los siguientes n&uacute;meros: +53 52743295 / +53 54719933<br>
-                                Esperamos por t&iacute;<br>
-                                  Email: <a href="mailto:elguayaberobar@gmail.com">elguayaberobar@gmail.com</a>
-                              </address>
-                            </div>
-                        <!-- /.col -->
-                            <div class="col-md-auto" id="pionero">
-                              We are located just 300 meters from the town of Melilla. <a href="https://goo.gl/maps/H7j3oF4pYg38ByTb8" target="_blank"><i class="fa fa-map-marked"></i></a>
-                              <address>
-                                    Contact us directly from our <a href="https://www.facebook.com/elguayaberobar">Faceboock</a> page<br>
-                                    Or through the following numbers: +53 52743295 / +53 54719933<br>
-                                    We wait for you<br>
-                                  Email: <a href="mailto:elguayaberobar@gmail.com">elguayaberobar@gmail.com</a>
-                                  </address>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab">
-                  <div class="fb-comments" data-href="127.0.0.1/about" data-width="100%" data-numposts="5"></div>
-              </div>
-              <div class="tab-pane fade" id="product-rating" role="tabpanel" aria-labelledby="product-rating-tab">
-                  <div class="row">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1706.9500165620634!2d-75.92154046265617!3d21.077291696564668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ecda56a897fc213%3A0xfe48ba3e37d1e987!2sRestaurant%20%26%20Bar%20(El%20Guayabero)!5e0!3m2!1ses!2scu!4v1675446368278!5m2!1ses!2scu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-                  </div>
+
+            <p class="label-2 section-subtitle slider-reveal">Tradational & Hygine</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              For the love of <br>
+              delicious food
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+
+            <a href="#" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Menu</span>
+
+              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="{% static 'img/hero-slider-2.jpg' %}" width="1880" height="950" alt="" class="img-cover">
             </div>
+
+            <p class="label-2 section-subtitle slider-reveal">delightful experience</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Flavors Inspired by <br>
+              the Seasons
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+
+            <a href="#" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Menu</span>
+
+              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="{% static 'img/hero-slider-3.jpg' %}" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Where every flavor <br>
+              tells a story
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+
+            <a href="#" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Menu</span>
+
+              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+            </a>
+
+          </li>
+
+        </ul>
+
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+          <ion-icon name="chevron-back"></ion-icon>
+        </button>
+
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+
+
+      </section>
+    <!--
+        - #SERVICE
+      -->
+
+      <section class="section service bg-black-10 text-center" aria-label="service">
+        <div class="container">
+
+          <p class="section-subtitle label-2">Sabores para la realeza</p>
+
+          <h2 class="headline-1 section-title">Ofrecemos lo Mejor</h2>
+
+          <p class="section-text">
+              Ven a nuestro local y déjate sorprender por nuestro ambiente acogedor y elegante, donde te atenderemos
+              con la máxima profesionalidad y cortesía.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <a href="#" class="hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <img src="{% static 'img/cena.jpg' %}" width="285" height="336" loading="lazy" alt="Cenas"
+                      class="img-cover">
+                  </figure>
+                </a>
+
+                <div class="card-content">
+
+                  <h3 class="title-4 card-title">
+                    <a href="#">Cenas</a>
+                  </h3>
+
+                  <a href="#" class="btn-text hover-underline label-2">Ver Menu</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <a href="#" class="hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <img src="{% static 'img/tacos.jpg' %}" width="285" height="336" loading="lazy" alt="Appetizers"
+                      class="img-cover">
+                  </figure>
+                </a>
+
+                <div class="card-content">
+
+                  <h3 class="title-4 card-title">
+                    <a href="#">Aperitivos</a>
+                  </h3>
+
+                  <a href="#" class="btn-text hover-underline label-2">Ver Menu</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <a href="#" class="hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <img src="{% static 'img/mojito1.jpg' %}" width="285" height="336" loading="lazy" alt="Drinks"
+                      class="img-cover">
+                  </figure>
+                </a>
+
+                <div class="card-content">
+
+                  <h3 class="title-4 card-title">
+                    <a href="#">Bebidas</a>
+                  </h3>
+
+                  <a href="#" class="btn-text hover-underline label-2">Ver Menu</a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+<!--
+        - #ABOUT
+      -->
+
+      <section class="section about text-center" aria-labelledby="about-label" id="about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="label-2 section-subtitle" id="about-label">Sobre Nosotros</p>
+
+            <h2 class="headline-1 section-title">Bar&Tapas el Guayabero</h2>
+
+            <p class="section-text">
+              Nos complace presentarles nuestro proyecto familiar Bar y Tapas ( El Guayabero ).
+                Les invitamos a descubrir las tradiciones cubanas desde nuestro local y hacer de su estancia
+                un momento feliz junto a nosotros, degustando de nuestras tapas y disfruntando de nuestra coctelería
+                nacional e internacional.
+                Trabajaremos con el placer de satisfacer sus necesidades.
+                Nuestro equipo les está esperando.
+            </p>
+
+            <div class="contact-label">Reserva Ahora</div><br>
+
+            <a href="tel:+53 52743295" class="body-1 contact-number hover-underline">+53 52743295</a><br>
+              <a href="tel:+5354719933" class="body-1 contact-number hover-underline">+53 54719933</a>
+
           </div>
-                <!-- /.col -->
-              </div>
-              <!-- /.row -->
 
-              <!-- this row will not appear when printing -->
+          <figure class="about-banner">
+
+            <img src="{% static 'img/collage.jpg' %}" width="570" height="570" loading="lazy" alt="about banner"
+              class="w-100" data-parallax-item data-parallax-speed="1">
+
+            <div class="abs-img abs-img-1" data-parallax-item data-parallax-speed="1.75">
+              <img src="{% static 'img/banner1.jpg' %}" style="border-radius: 50px;" width="285" height="285" loading="lazy" alt=""
+                class="w-100">
             </div>
-            <!-- /.invoice -->
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-<script>
-  $(document).ready(function() {
-    $('.product-image-thumb').on('click', function () {
-      var $image_element = $(this).find('img')
-      $('.product-image').prop('src', $image_element.attr('src'))
-      $('.product-image-thumb.active').removeClass('active')
-      $(this).addClass('active')
-    });
-    if (screen.width >580){
-            var elemento = document.getElementById("pionero");
-            elemento.style.marginLeft="50px";
-        };
-  });
-</script>
+
+          </figure>
+
+        </div>
+      </section>
+
+
+
+    </article>
+  </main>
+
 {% endblock %}
