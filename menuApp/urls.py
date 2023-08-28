@@ -18,7 +18,7 @@ from .views import *
 from django.contrib.auth.views import LogoutView
 urlpatterns = [
     path('/menu', HomePage.as_view(),name='Home'),
-    #path('qr/',qrcode2,name='generar'),
+    path('qr/',qrcode2,name='generar'),
     path('',abaut,name='abaut'),
     #path('accounts/login/',LoginFormView.as_view(),name='login'),
     #path('login/',LoginFormView.as_view(),name='login'),

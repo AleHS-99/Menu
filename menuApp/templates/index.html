@@ -40,13 +40,12 @@
                                       <a href="#" class="card-title">{{ c.nombre }}</a>
                                     </h3>
 
-                                    <span class="badge label-1">Seasonal</span>
 
-                                    <span class="span title-2">$25.50</span>
+                                    <span class="span title-2">${{ c.precio}}</span>
                                   </div>
 
                                   <p class="card-text label-1">
-                                    Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.
+                                    {% if c.ingredientes %}{{ c.ingredientes }}{% endif %}
                                   </p>
 
                                 </div>

@@ -29,10 +29,10 @@
               Come with family & feel the joy of mouthwatering food
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
-              <span class="text text-1">View Our Menu</span>
+            <a href="{% url 'Home' %}" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Descubre nuestro Men&uacute;</span>
 
-              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true">Descubre nuestro Men&uacute;</span>
             </a>
 
           </li>
@@ -54,10 +54,10 @@
               Come with family & feel the joy of mouthwatering food
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
-              <span class="text text-1">View Our Menu</span>
+            <a href="{% url 'Home' %}" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Descubre nuestro Men&uacute;</span>
 
-              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true">Descubre nuestro Men&uacute;</span>
             </a>
 
           </li>
@@ -79,10 +79,10 @@
               Come with family & feel the joy of mouthwatering food
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
+            <a href="{% url 'Home' %}" class="btn btn-primary slider-reveal">
               <span class="text text-1">View Our Menu</span>
 
-              <span class="text text-2" aria-hidden="true">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true">Descubre nuestro Men&uacute;</span>
             </a>
 
           </li>
@@ -130,10 +130,10 @@
                 <div class="card-content">
 
                   <h3 class="title-4 card-title">
-                    <a href="#">Cenas</a>
+                    <a href="{% url 'Home' %}">Cenas</a>
                   </h3>
 
-                  <a href="#" class="btn-text hover-underline label-2">Ver Menu</a>
+                  <a href="{% url 'Home' %}" class="btn-text hover-underline label-2">Ver Menu</a>
 
                 </div>
 
@@ -153,10 +153,10 @@
                 <div class="card-content">
 
                   <h3 class="title-4 card-title">
-                    <a href="#">Aperitivos</a>
+                    <a href="{% url 'Home' %}">Aperitivos</a>
                   </h3>
 
-                  <a href="#" class="btn-text hover-underline label-2">Ver Menu</a>
+                  <a href="{% url 'Home' %}" class="btn-text hover-underline label-2">Ver Menu</a>
 
                 </div>
 
@@ -176,10 +176,10 @@
                 <div class="card-content">
 
                   <h3 class="title-4 card-title">
-                    <a href="#">Bebidas</a>
+                    <a href="{% url 'Home' %}">Bebidas</a>
                   </h3>
 
-                  <a href="#" class="btn-text hover-underline label-2">Ver Menu</a>
+                  <a href="{% url 'Home' %}" class="btn-text hover-underline label-2">Ver Menu</a>
 
                 </div>
 
@@ -187,7 +187,10 @@
             </li>
 
           </ul>
-
+            <img src="{% static 'img/shape-1.png' %}" width="246" height="412" loading="lazy" alt="shape"
+            class="shape shape-1 move-anim">
+          <img src="{% static 'img/shape-2.png' %}" width="343" height="345" loading="lazy" alt="shape"
+            class="shape shape-2 move-anim">
         </div>
       </section>
 
