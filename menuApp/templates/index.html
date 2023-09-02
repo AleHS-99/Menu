@@ -6,6 +6,28 @@
     #menu{
         background-image: url({% static 'img/shape-5.png' %});
     }
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: rgba(31,32,33,0.5);
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
 </style>
       <section class="section menu" aria-label="menu-label" id="menu">
         <div class="container">
@@ -16,7 +38,10 @@
 
 
                {% for m in modal %}
-                   <p class="section-subtitle text-center label-2">{{ m.1 }}</p>
+                   <div type="button" class="collapsible">
+                   <p class="section-subtitle text-center label-2">{{ m.1 }} ↓ </p>
+                   </div>
+                   <div class="content">
                    <ul class="grid-list">
                    {% for c in object_list %}
                         {% if c.moda.codigo == m.0 %}
@@ -55,11 +80,27 @@
                        {% endif %}
                    {% endfor %}
                 </ul>
+                   </div>
               {% endfor %}
 
 
         </div>
       </section>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 
 {% endblock %}

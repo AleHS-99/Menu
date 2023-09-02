@@ -183,7 +183,6 @@ body {
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
   overflow: hidden;
-  height: 300vh;
 }
 
 body.loaded { overflow: overlay; }
@@ -323,7 +322,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .section-subtitle::after {
-  content: url('../images/separator.svg');
+  content: url('/static/img/separator.svg');
   display: block;
   width: 100px;
   margin-inline: auto;
@@ -918,7 +917,7 @@ body.nav-active { overflow: hidden; }
   transform: translateX(-50%);
   width: 140px;
   height: 100%;
-  background-image: url('../images/img-pattern.svg');
+  background-image: url('/static/img/img-pattern.svg');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -1306,7 +1305,6 @@ textarea.input-field {
   #FOOTER
 \*-----------------------------------*/
 
-.footer-top { margin-block-end: 70px; }
 
 .footer-brand {
   position: relative;
